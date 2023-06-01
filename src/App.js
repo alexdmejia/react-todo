@@ -1,5 +1,6 @@
 // import React from 'react';
 import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 // import TodoListItem from "./TodoListItem";
@@ -25,17 +26,16 @@ function App() {
       const data = await response.json();
       const todos = data.records.map((record) => {
         return {
-          title : record.fields.title, 
-          id : record.id
+          title: record.fields.title,
+          id: record.id,
         };
       });
-      setTodoList (todos);
-      setIsLoading (false);
+      setTodoList(todos);
+      setIsLoading(false);
     } catch (error) {
       console.log(error.message);
     }
   };
-
 
   //uE simulates API calls
   useEffect(() => {
@@ -57,16 +57,33 @@ function App() {
   }
 
   return (
-    <>
-      <h1> TodoList </h1>
-      <AddTodoForm onAddTodo={AddTodo} />
-      {/* just by putting varaiable is ""=== true" , the left condition if is the condition is true*/}
-      {isLoading === false ? (
-        <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
-      ) : (
-        <p> Loading ...</p>
-      )}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <>
+              <h1> TodoList </h1>
+              <AddTodoForm onAddTodo={AddTodo} />
+              {/* just by putting varaiable is ""=== true" , the left condition if is the condition is true*/}
+              {isLoading === false ? (
+                <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+              ) : (
+                <p> Loading ...</p>
+              )}
+            </>
+          }
+        ></Route>
+        <Route 
+        path="/new" 
+        element={
+        <h1>New Todo List</h1>
+        } 
+          
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
