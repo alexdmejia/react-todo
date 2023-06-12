@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
+import style from "./App.module.css"
 // import TodoListItem from "./TodoListItem";
 
 function App() {
@@ -63,7 +64,7 @@ function App() {
           path="/"
           exact
           element={
-            <>
+            <div className={style.appContainer}>
               <h1> TodoList </h1>
               <AddTodoForm onAddTodo={AddTodo} />
               {/* just by putting varaiable is ""=== true" , the left condition if is the condition is true*/}
@@ -72,7 +73,7 @@ function App() {
               ) : (
                 <p> Loading ...</p>
               )}
-            </>
+            </div>
           }
         ></Route>
         <Route 
