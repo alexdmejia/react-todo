@@ -1,8 +1,8 @@
 // import React from 'react';
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AddTodoForm from "./AddTodoForm";
-import TodoList from "./TodoList";
+import AddTodoForm from "./Components/AddTodoForm";
+import TodoList from "./Components/TodoList";
 import style from "./App.module.css"
 // import TodoListItem from "./TodoListItem";
 
@@ -66,7 +66,7 @@ function App() {
           element={
             <div className={style.appContainer}>
               <h1> TodoList </h1>
-              <AddTodoForm onAddTodo={AddTodo} />
+              <AddTodoForm onAddTodo={AddTodo} /> {/*when sending a text error in console*/}
               {/* just by putting varaiable is ""=== true" , the left condition if is the condition is true*/}
               {isLoading === false ? (
                 <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
