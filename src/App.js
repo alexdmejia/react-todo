@@ -1,8 +1,8 @@
 // import React from 'react';
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AddTodoForm from "./AddTodoForm";
-import TodoList from "./TodoList";
+import AddTodoForm from "./Components/AddTodoForm";
+import TodoList from "./Components/TodoList";
 import style from "./App.module.css"
 // import TodoListItem from "./TodoListItem";
 
