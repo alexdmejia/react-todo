@@ -1,5 +1,6 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
+import style from "./TodoList.module.css"
 
 const todoList = [
   {
@@ -20,7 +21,7 @@ const todoList = [
 function TodoList({ todoList, onRemoveTodo }) {
   return (
     <div>
-      <ul>
+      <ul className={style.padding}>
         {todoList.map(function (item) {
           return (
             <TodoListItem

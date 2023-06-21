@@ -1,0 +1,11 @@
+.appContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+}
+
+h1 {
+    background-color: aqua;
+}
