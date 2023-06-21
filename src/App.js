@@ -66,7 +66,7 @@ function App() {
           element={
             <div className={style.appContainer}>
               <h1> TodoList </h1>
-              <AddTodoForm onAddTodo={AddTodo} />
+              <AddTodoForm onAddTodo={AddTodo} /> {/*when sending a text error in console*/}
               {/* just by putting varaiable is ""=== true" , the left condition if is the condition is true*/}
               {isLoading === false ? (
                 <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
