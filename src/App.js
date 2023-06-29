@@ -24,8 +24,17 @@ function App() {
       if (response.ok === false) {
         throw new Error(`${response.status}`);
       }
-      const data = await response.json();
-      const todos = data.records.map((record) => {
+    const data = await response.json();
+     const sortData = data.records.sort((objectA, objectB)=> {
+        if (objectA.fields.title > objectB.fields.title) {
+          return -1;
+        } else if (objectA.fields.title === objectB.fields.title) {
+          return 0;
+        } else {
+          return 1;
+        } 
+      });
+    const todos = sortData.map((record) => {
         return {
           title: record.fields.title,
           id: record.id,
