@@ -22,7 +22,7 @@ const todoList = [
 
 function TodoList({ todoList, onRemoveTodo }) {
   return (
-    <div>
+    <div className={style['todo-list']}>
       <ul className={style.padding}>
         {todoList.map(function (item) {
           return (

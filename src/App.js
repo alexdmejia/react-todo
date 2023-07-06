@@ -73,7 +73,7 @@ function App() {
           path="/"
           exact
           element={
-            <div className={style.appContainer}>
+            <div className={style.appContainer} >
               <h1> TodoList </h1>
               <AddTodoForm onAddTodo={AddTodo} /> {/*when sending a text error in console*/}
               {/* just by putting varaiable is ""=== true" , the left condition if is the condition is true*/}

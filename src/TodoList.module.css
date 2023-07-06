@@ -1,3 +1,30 @@
 .padding {
     padding: 0;
 }
+
+/* Small screens */
+@media (max-width: 767px) {
+    /* Apply styles for small screens */
+    .todo-list {
+      /* Example: Reduce font size for small screens */
+      font-size: 14px;
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Apply styles for medium screens */
+    .todo-list {
+      /* Example: Adjust padding for medium screens */
+      padding: 10px;
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 1024px) {
+    /* Apply styles for large screens */
+    .todo-list {
+      /* Example: Increase font size for large screens */
+      font-size: 18px;
+    }
+  }
